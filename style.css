@@ -1,0 +1,251 @@
+body{
+    width: 2000px;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+.parent {
+    display: grid;
+    width: 1500px;
+    height: 1000px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+    
+.div1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    position: relative;
+    display: block;
+    width: 225px;
+    height: 225px;
+    background-color: rgb(89, 14, 209);
+}
+.img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 0;
+    transition: .5s ease;
+}
+.box:hover .img {
+    width: 100%;
+}
+.div2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+#red{
+    background-color: red;
+}
+#green{
+    background-color: yellow;
+}
+#blue{
+    background-color: green;
+}
+#yellow{
+    background-color: blue;
+}
+#pink{
+    background-color: pink;
+}
+#cyan{
+    background-color: cyan;
+}
+.confetti{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+@-webkit-keyframes div2-fall {
+    0% {
+        top: 0%;
+        transform: rotate(0deg); 
+    }
+    100% {
+        top: 100%;
+        transform: rotate(360deg); 
+    }
+}
+@keyframes div2-fall {
+    0% {
+        top: 0%;
+        transform: rotate(0deg); 
+    }
+    100% {
+        top: 100%;
+        transform: rotate(360deg); 
+    }
+}
+.confetti {
+    position: absolute;
+    top: -10%;
+    z-index: 10;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-animation-name: div2-fall, div2-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: div2-fall, div2-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running
+}
+.confetti:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s
+}
+
+.confetti:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 1s, 1s;
+    animation-delay: 1s, 1s
+}
+
+.confetti:nth-of-type(2) {
+    left: 20%;
+    -webkit-animation-delay: 6s, .5s;
+    animation-delay: 6s, .5s
+}
+
+.confetti:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 4s, 2s
+}
+
+.confetti:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 2s, 2s
+}
+
+.confetti:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay: 8s, 3s
+}
+
+.confetti:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 6s, 2s
+}
+
+.confetti:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 2.5s, 1s
+}
+
+.confetti:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 1s, 0s;
+    animation-delay: 1s, 0s
+}
+
+.confetti:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 3s, 1.5s
+}
+
+.snowflake:nth-of-type(10) {
+    left: 25%;
+    -webkit-animation-delay: 2s, 0s;
+    animation-delay: 2s, 0s
+}
+
+.confetti:nth-of-type(11) {
+    left: 65%;
+    -webkit-animation-delay: 4s, 2.5s;
+    animation-delay: 4s, 2.5s
+}
+.div3 { 
+    grid-area: 1 / 3 / 2 / 4; 
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div4 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: 2 / 1 / 3 / 2;
+     border: 1px solid black;
+    }
+    .ball {
+        min-height: 100px;
+        min-width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: radial-gradient(white, black);
+        box-shadow: 0px 10px 20px rgb(88, 88, 88);
+        border-radius: 50%;
+        animation: breathe 12s linear infinite;
+    }
+    @keyframes breathe {
+        0%,
+        100% {
+          height: 100px;
+          width: 100px;
+        }
+        33.333% {
+          width: 200px;
+          height: 200px;
+        }
+      }
+.div5 { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: 2 / 2 / 3 / 3;
+     border: 1px solid black;
+    }
+    a:hover{
+        transition-delay: 1s;
+        color: green;
+    }
+    a:visited{
+        color: red;
+    }
+.div6 { 
+    grid-area: 2 / 3 / 3 / 4;
+    border: 1px solid black;
+}
+.div7 { 
+    grid-area: 3 / 1 / 4 / 2;
+     border: 1px solid black;
+    }
+.div8 { 
+    grid-area: 3 / 2 / 4 / 3;
+     border: 1px solid black;
+    }
+.div9 { 
+    grid-area: 3 / 3 / 4 / 4;
+     border: 1px solid black;
+    }
