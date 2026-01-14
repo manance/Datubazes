@@ -1,4 +1,4 @@
-CREATE DATABASE userdb;
+CREATE DATABASE users_ipb24;
 USE users_ipb24;
 
 CREATE TABLE users(

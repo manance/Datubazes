@@ -29,7 +29,11 @@
         $db->query("DELETE FROM users WHERE id='$id'");
         header("Location: " . $_SERVER['PHP_SELF']);
     }
-    
+  
+    $key = "680f1dcf3d718e1d75fbd4f9277dd883";
+    $city = "Cesis,lv";
+    $url = "https://api.openweathermap.org/data/2.5/weather?q=" . $city . "&APPID=" . $key . "&units=metric";
+    $data = json_decode(file_get_contents($url), true);
 ?>
 
 <!DOCTYPE html>
@@ -72,13 +76,19 @@
             <br>
             <a href="https://www.1a.lv/" target="_blank">1a.lv</a>
         </div>
-        <div class="div6"></div>
+        <div class="div6">
+            <?php
+                echo "<p><strong>City:</strong> " . $data['name'] . "</p>";
+                echo "<p><strong>Weather:</strong> " . $data['weather'][0]['main'] . "</p>";
+                echo "<p><strong>Temperature:</strong> " . $data['main']['temp'] . "</p>";
+            ?>
+        </div>
         <div class="div7">
             <form method="post">
-                <input name="first_name"/>
-                <input name="last_name"/>
-                <input name="phone"/>
-                <input name="code"/>
+                <input name="first_name" placeholder="First name"/>
+                <input name="last_name" placeholder="Last name"/>
+                <input name="phone" placeholder="Phone"/>
+                <input name="code" placeholder="Person code"/>
                 <button>ENTER</button>
             </form>
         </div>
