@@ -1,0 +1,2 @@
+SELECT * FROM owners WHERE username REGEXP last_name;
+->Izvada visus īpašniekus, kuru lietotājvārds satur viņa uzvārdu.
