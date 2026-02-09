@@ -22,3 +22,10 @@
 |  SELECT make, model, CONCAT(make, " ", model) AS car_label FROM cars;
 |
 |->  Izvada jaunu tabulu, kur zem car_label kolonnas ir make un model savienoti.
+================================================================================
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<IN>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+================================================================================
+|  SELECT * FROM cars WHERE color IN ("Black", "White", "Silver");
+|
+|->  Izvada mašīnas, kuru crāsas ir vai nu melna, balta vai sudraba.
+|->  Īsāks veids kā pierakstīt neizmantojot OR operātoru.
